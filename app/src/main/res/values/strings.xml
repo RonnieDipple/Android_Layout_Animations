@@ -2,5 +2,6 @@
     <string name="app_name">ShoppingList</string>
     <string name="send_list">Send List</string>
     <string name="share_list">Share List</string>
+    <string name="next_page">Next Page</string>
 
 </resources>

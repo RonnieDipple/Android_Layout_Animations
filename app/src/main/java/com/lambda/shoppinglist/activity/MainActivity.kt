@@ -1,4 +1,4 @@
-package com.lambda.shoppinglist
+package com.lambda.shoppinglist.activity
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -8,11 +8,19 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.lambda.shoppinglist.adapter.GroceryAdapter
+import com.lambda.shoppinglist.model.GroceryRepository
+import com.lambda.shoppinglist.R
+import com.lambda.shoppinglist.model.Grocery
+import kotlinx.android.synthetic.main.activity_details.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,10 +28,12 @@ class MainActivity : AppCompatActivity() {
 
         GroceryRepository.createGroceryList()
 
+
         puppy_list_view.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = GroceryAdapter(GroceryRepository.groceryList)
+            adapter =
+                GroceryAdapter(GroceryRepository.groceryList)
             
         }
 
@@ -38,6 +48,12 @@ class MainActivity : AppCompatActivity() {
             shareIntent.putExtra(Intent.EXTRA_TEXT, addedGroceries)
             startActivity(shareIntent)
         }
+
+
+
+
+
+
 
 
     }

@@ -1,7 +1,26 @@
-package com.lambda.shoppinglist
+package com.lambda.shoppinglist.model
+
+import com.lambda.shoppinglist.R
+
+object GroceryRepository {
+    val groceryList = mutableListOf<Grocery>()
+        fun createGroceryList() {
+
+            for (i in 0 until ITEM_NAMES_RAW.size) {
+                groceryList.add(
+                    Grocery(
+                        ITEM_NAMES_RAW[i],
+                        ICON_IDS[i],
+                        false
+                    )
+                )
+            }
+        }
+    }
 
 
-    val ICON_IDS = arrayOf(
+
+val ICON_IDS = arrayOf(
         R.drawable.almond,
         R.drawable.apple_green,
         R.drawable.apple_red,
